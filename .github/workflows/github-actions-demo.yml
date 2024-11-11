@@ -47,7 +47,10 @@ jobs:
         - 80
       volumes:
         - my_docker_volume:/volume_mount
-      options: --cpus 1
+      options: |
+        --cpus 1
+        --user root
+
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
