@@ -48,7 +48,7 @@ jobs:
       volumes:
         - my_docker_volume:/volume_mount
       options: |
-        --cpus 1
+        --cpus 1 \
         --user root
 
     steps:
