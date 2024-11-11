@@ -51,8 +51,10 @@ jobs:
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+      - name: Set permissions on temp directory
+        run: chmod -R 777 /__w/_temp/
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python 3.8
         uses: actions/setup-python@v5
         with:
